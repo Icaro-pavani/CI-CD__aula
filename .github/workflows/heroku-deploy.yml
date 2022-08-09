@@ -2,13 +2,9 @@ name: Deploy on Heroku
 
 on:
   push:
-<<<<<<< HEAD
+
     branches:
       - main
-=======
-    branches: 
-      -main
->>>>>>> 35938aba3c7bbc37f2027076b366a810160d35c9
 
 jobs:
   HerokuDeploy:
