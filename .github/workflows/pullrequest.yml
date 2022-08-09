@@ -3,10 +3,10 @@ on: [pull_request]
 jobs:
   PullRequest:
     runs-on: ubuntu-latest
-      steps:
-        - name: Check out repository code
+    steps:
+      - name: Check out repository code
         uses: actions/checkout@v3
-        - name: Make a new envfile
+      - name: Make a new envfile
         uses: SpicyPizza/create-envfile@v1
         with:
           envkey_POSTGRES_USER: "postgres"
@@ -14,5 +14,5 @@ jobs:
           envkey_POSTGRES_DB: "students__tests"
           envkey_DATABASE_URL: "postgresql://postgres:postgres@db:5432/students__tests"
           file_name: .env.test
-        - name: Run tests
+      - name: Run tests
         run: docker-compose -f docker-compose-test.yml run ci-cd_test npm run test
