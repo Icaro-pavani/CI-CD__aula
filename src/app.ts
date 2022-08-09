@@ -10,10 +10,11 @@ app.get("/students", async (req: Request, res: Response) => {
 });
 
 app.post("/students", async (req: Request, res: Response) => {
+  console.log("teste");
   const { students } = req.body;
   await prisma.student.createMany({
     data: students,
-    skipDuplicates: true
+    skipDuplicates: true,
   });
 
   res.sendStatus(201); // created
